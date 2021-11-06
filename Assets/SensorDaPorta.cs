@@ -8,8 +8,8 @@ public class SensorDaPorta : MonoBehaviour
     public Material corQuePode;
     private void OnTriggerEnter(Collider other)
     {
-        
-        if ((other.CompareTag("Player")) || ((other.GetComponent<MeshRenderer>().materials[0].color.Equals(corQuePode.color))))
+
+        if (other.CompareTag("Player"))
         {
             porta.SetBool("aberta", true);
         }        
@@ -17,7 +17,7 @@ public class SensorDaPorta : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if ((other.CompareTag("Player")) || ((other.GetComponent<MeshRenderer>().materials[0].color.Equals(corQuePode.color))))
+        if (other.CompareTag("Player"))
         {
             porta.SetBool("aberta", false);
         }
